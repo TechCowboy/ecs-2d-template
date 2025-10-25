@@ -1,6 +1,5 @@
 extends Node2D
 @onready var tile_map_layer: TileMapLayer = $TileMapLayer
-@onready var timer: Timer = $Timer
 
 var TILE_SIZE = 16
 var my_maze : Maze
@@ -30,14 +29,12 @@ var WALL_E   = Vector2i(6,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	timer.start()
-	print("Begin at main")
+
 	my_maze = Maze.new()
 	my_maze.set_tile_map_layer(tile_map_layer)
-	my_maze.generate(0, 0, cols, rows,true, draw_maze)
-	print("Drawing...")
+	my_maze.generate(0, 0, cols, rows)
+
 	draw_maze()
-	print("Drawn")
 
 func get_walls(room:MazeRoom) -> String:
 	var walls = ""
@@ -52,14 +49,6 @@ func get_walls(room:MazeRoom) -> String:
 	return walls
 
 func draw_maze():
-	
-	#print("wait")
-	#timer.start()
-	#while ! timer.is_stopped():
-	#	pass
-	#print("wait done.")
-	
-	#my_maze.display_maze()
 	
 	tile_map_layer.clear()
 
@@ -107,6 +96,4 @@ func draw_maze():
 	
 func _on_button_pressed() -> void:
 	my_maze.generate(0,0, cols, rows)
-	print("Drawing...")
 	draw_maze()
-	print("Drawn")

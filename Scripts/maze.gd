@@ -22,7 +22,6 @@ func set_tile_map_layer(tile):
 	
 func clear(_cols, _rows) -> void:
 
-	print("Clear")
 	cols = _cols
 	rows = _rows
 	my_maze.resize(rows*cols)
@@ -31,8 +30,9 @@ func clear(_cols, _rows) -> void:
 	for _row in range(rows):
 		for _col in range(cols):
 			var room1 : MazeRoom = MazeRoom.new()
+			room1.col = _col
+			room1.row = _row
 			my_maze[index(_col, _row)] = room1
-			my_maze[index(_col, _row)].neighbours = []
 			
 
 
@@ -64,7 +64,7 @@ func do_nothing():
 	
 
 			
-func generate(start_col, start_row, _cols = 12, _rows=12, first_time = true, callable_func: Callable = do_nothing) -> bool:
+func generate(start_col, start_row, _cols = 12, _rows=12, callable_func: Callable = do_nothing) -> bool:
 	var col = start_col
 	var row = start_row
 	var new_col
@@ -77,12 +77,8 @@ func generate(start_col, start_row, _cols = 12, _rows=12, first_time = true, cal
 		for x in range(cols):
 			unvisited_stack.push_front([x,y])
 			
-				
-	#callable_func.call()
+	callable_func.call()
 		
-	print("current ["+str(col)+","+str(row)+"]")		
-	
-	#print("generating ["+str(col)+","+str(row)+"]...")
 	my_maze[index(col,row)].visited = true
 	visited_stack.push_front([col,row])
 	
@@ -90,23 +86,19 @@ func generate(start_col, start_row, _cols = 12, _rows=12, first_time = true, cal
 	while len(unvisited_stack)>0:
 		
 		var adjacents = get_neighbours(col, row)
-		print("at ["+str(col)+","+str(row)+"  "+str(adjacents))
 		if adjacents == []:
 			old_position = visited_stack.pop_back()
 			if old_position == null:
 				break
 			col = old_position[0]
 			row = old_position[1]
-			print("Old position ["+str(col)+","+str(row)+"]")
 			continue
 			
 		for new_position in adjacents:
 			
 			new_col = new_position[0]
 			new_row = new_position[1]
-		
-			print("Move to ["+str(new_col)+","+str(new_row)+"]")
-			
+					
 			unvisited_stack.erase(new_position)
 			visited_stack.push_front(new_position)
 			my_maze[index(new_col, new_row)].visited = true
@@ -114,32 +106,28 @@ func generate(start_col, start_row, _cols = 12, _rows=12, first_time = true, cal
 			# remove the walls
 			# west wall?
 			if new_col == col-1:
-				print("Remove west ["+str(col)+","+str(row)+"]")
 				my_maze[index(col, row)].west = false
 				my_maze[index(new_col, new_row)].east = false
 			else:
 				# east wall?
 				if new_col == col+1:
-					print("Remove east ["+str(col)+","+str(row)+"]")
 					my_maze[index(col, row)].east = false
 					my_maze[index(new_col, new_row)].west = false
 				else:
 					# north wall?
 					if new_row == row-1:
-						print("Remove north ["+str(col)+","+str(row)+"]")
 						my_maze[index(col, row)].north = false	
 						my_maze[index(new_col, new_row)].south = false
 					else:
 						# south wall
 						if new_row == row+1:
-							print("Remove south ["+str(col)+","+str(row)+"]")
 							my_maze[index(col, row)].south = false	
 							my_maze[index(new_col, new_row)].north = false	
 				
-		print("Inner for complete")
+
 		col = new_col
 		row = new_row
-	print("Inner while complete")		
+	
 	return true
 	
 func get_room(col, row) -> MazeRoom:

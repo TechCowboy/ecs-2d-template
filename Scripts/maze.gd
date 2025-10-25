@@ -9,6 +9,8 @@ var visited_stack: Array = []
 var rows = 0
 var cols = 0
 
+signal generation_complete
+
 var tile_map_layer: TileMapLayer 
  
 func index(x:int, y:int):
@@ -16,6 +18,7 @@ func index(x:int, y:int):
 		
 func _init() -> void:
 	pass
+
 
 func set_tile_map_layer(tile):
 	tile_map_layer = tile
@@ -30,31 +33,29 @@ func clear(_cols, _rows) -> void:
 	for _row in range(rows):
 		for _col in range(cols):
 			var room1 : MazeRoom = MazeRoom.new()
-			room1.col = _col
-			room1.row = _row
 			my_maze[index(_col, _row)] = room1
 			
 
 
-func get_neighbours(col, row):
+func get_neighbours(_col, _row):
 	
 	unvisted_neighbours = []
 		# Determine neighbours of each cell
-	if col-1 >= 0:
-		if ! my_maze[index(col-1, row)].visited:
-			unvisted_neighbours.push_front([col-1, row])
+	if _col-1 >= 0:
+		if ! my_maze[index(_col-1, _row)].visited:
+			unvisted_neighbours.push_front([_col-1, _row])
 
-	if col+1 <= cols-1:
-		if ! my_maze[index(col+1, row)].visited:
-			unvisted_neighbours.push_front([col+1, row])
+	if _col+1 <= cols-1:
+		if ! my_maze[index(_col+1, _row)].visited:
+			unvisted_neighbours.push_front([_col+1, _row])
 		
-	if row-1 >= 0:
-		if ! my_maze[index(col, row-1)].visited:
-			unvisted_neighbours.push_front([col, row-1])
+	if _row-1 >= 0:
+		if ! my_maze[index(_col, _row-1)].visited:
+			unvisted_neighbours.push_front([_col, _row-1])
 		
-	if row+1 <= rows-1:
-		if ! my_maze[index(col, row+1)].visited:
-			unvisted_neighbours.push_front([col, row+1])
+	if _row+1 <= rows-1:
+		if ! my_maze[index(_col, _row+1)].visited:
+			unvisted_neighbours.push_front([_col, _row+1])
 			
 	unvisted_neighbours.shuffle()
 	return unvisted_neighbours
@@ -128,6 +129,8 @@ func generate(start_col, start_row, _cols = 12, _rows=12, callable_func: Callabl
 		col = new_col
 		row = new_row
 	
+	generation_complete.emit()
+		
 	return true
 	
 func get_room(col, row) -> MazeRoom:

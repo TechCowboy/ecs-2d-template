@@ -5,9 +5,6 @@ var south : bool = true
 var east  : bool = true
 var west  : bool = true
 
-var col : int = -1
-var row : int = -1
-
 var visited : bool = false
 
 # Called when the node enters the scene tree for the first time.

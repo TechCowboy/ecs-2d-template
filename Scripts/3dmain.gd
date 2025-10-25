@@ -16,11 +16,20 @@ var west_wall = preload("res://Scenes/west_wall.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 
+	print("main starting...")
 	my_maze = Maze.new()
+	print("Connecting....")
+	my_maze.generation_complete.connect(generation_complete)
+	print("generation start")
 	my_maze.generate(0, 0, cols, rows)
-	my_maze.display_maze()
+	
+	
 
-	draw_maze()
+	
+func generation_complete():
+	print("Generation Complete")
+	my_maze.display_maze()
+	draw_3D_maze()
 
 func get_walls(room:MazeRoom) -> String:
 	var walls = ""
@@ -34,7 +43,7 @@ func get_walls(room:MazeRoom) -> String:
 		walls += 'E'
 	return walls
 
-func draw_maze():
+func draw_3D_maze():
 	
 	var start_x = -50
 	var start_y =   0

@@ -32,9 +32,12 @@ func _ready() -> void:
 
 	my_maze = Maze.new()
 	my_maze.set_tile_map_layer(tile_map_layer)
+	my_maze.generation_complete.connect(generation_complete)
 	my_maze.generate(0, 0, cols, rows)
 
-	draw_maze()
+
+func generation_complete():
+	draw_2D_maze()
 
 func get_walls(room:MazeRoom) -> String:
 	var walls = ""
@@ -48,7 +51,7 @@ func get_walls(room:MazeRoom) -> String:
 		walls += 'E'
 	return walls
 
-func draw_maze():
+func draw_2D_maze():
 	
 	tile_map_layer.clear()
 
@@ -96,4 +99,4 @@ func draw_maze():
 	
 func _on_button_pressed() -> void:
 	my_maze.generate(0,0, cols, rows)
-	draw_maze()
+	draw_2D_maze()

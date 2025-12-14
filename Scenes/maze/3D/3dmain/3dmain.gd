@@ -6,10 +6,10 @@ var my_maze : Maze
 var cols = 10	
 var rows = 10
 
-var north_wall = preload("res://Scenes/north_wall.tscn")
-var south_wall = preload("res://Scenes/south_wall.tscn")
-var east_wall = preload("res://Scenes/east_wall.tscn")
-var west_wall = preload("res://Scenes/west_wall.tscn")
+var north_wall = preload("uid://babwi4romeaa4")
+var south_wall = preload("uid://bnwjov66glhg7")
+var east_wall = preload("uid://b32qaiuxuqd4x")
+var west_wall = preload("uid://bo0d0c87t1leo")
 
 
 

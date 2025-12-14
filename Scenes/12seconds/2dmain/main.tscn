@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1h2wrj0my71d"]
 
-[ext_resource type="Script" uid="uid://yoq2mfxtbk3g" path="res://Scripts/main.gd" id="1_m8x5s"]
+[ext_resource type="Script" uid="uid://yoq2mfxtbk3g" path="res://Scenes/maze/2D/2dmain/main.gd" id="1_g1ksg"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_m8x5s")
+script = ExtResource("1_g1ksg")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

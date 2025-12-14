@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="ECS 2D Template"
-run/main_scene="uid://c1h2wrj0my71d"
+run/main_scene="uid://bw2n85403ll4k"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://Scenes/12seconds/scripts/globals.gd"
+
+[global_group]
+
+player=""
 
 [rendering]
 

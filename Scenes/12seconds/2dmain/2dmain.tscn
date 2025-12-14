@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw2n85403ll4k"]
+
+[ext_resource type="Script" uid="uid://5ptivomvl2ld" path="res://Scenes/12seconds/2dmain/2dmain.gd" id="1_mjba8"]
+[ext_resource type="PackedScene" uid="uid://yeicasfrtwq" path="res://Scenes/12seconds/HUD/hud.tscn" id="2_l7tyd"]
+[ext_resource type="PackedScene" uid="uid://cjw534simi2n4" path="res://Scenes/12seconds/seasaw/sea_saw.tscn" id="3_3eiue"]
+[ext_resource type="PackedScene" uid="uid://52ku7f34owj7" path="res://Scenes/12seconds/player/player.tscn" id="4_kadgc"]
+[ext_resource type="PackedScene" uid="uid://baq5gx64salpb" path="res://Scenes/12seconds/coin/coin.tscn" id="5_e636w"]
+
+[node name="2Dmain" type="Node2D"]
+script = ExtResource("1_mjba8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("2_l7tyd")]
+
+[node name="Player" parent="." instance=ExtResource("4_kadgc")]
+position = Vector2(399, 130)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="SeaSaw" parent="." instance=ExtResource("3_3eiue")]
+position = Vector2(396, 160)
+
+[node name="SeaSaw2" parent="." instance=ExtResource("3_3eiue")]
+position = Vector2(433, 253)
+
+[node name="SeaSaw3" parent="." instance=ExtResource("3_3eiue")]
+position = Vector2(264, 307)
+
+[node name="SeaSaw4" parent="." instance=ExtResource("3_3eiue")]
+position = Vector2(490, 99)
+
+[node name="SeaSaw5" parent="." instance=ExtResource("3_3eiue")]
+position = Vector2(613, 286)
+
+[node name="SeaSaw6" parent="." instance=ExtResource("3_3eiue")]
+position = Vector2(698, 160)
+
+[node name="SeaSaw7" parent="." instance=ExtResource("3_3eiue")]
+position = Vector2(776, 351)
+
+[node name="SeaSaw8" parent="." instance=ExtResource("3_3eiue")]
+position = Vector2(868, 252)
+
+[node name="SeaSaw9" parent="." instance=ExtResource("3_3eiue")]
+position = Vector2(968, 160)
+
+[node name="Coin" parent="." instance=ExtResource("5_e636w")]
+position = Vector2(283, 273)
+
+[node name="Coin2" parent="." instance=ExtResource("5_e636w")]
+position = Vector2(493, 67)
+
+[node name="Coin3" parent="." instance=ExtResource("5_e636w")]
+position = Vector2(457, 200)
+
+[node name="Coin4" parent="." instance=ExtResource("5_e636w")]
+position = Vector2(695, 120)

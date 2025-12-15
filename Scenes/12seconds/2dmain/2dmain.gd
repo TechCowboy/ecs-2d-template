@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var items_for_win = Globals.items_needed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,12 +9,15 @@ func _ready() -> void:
 	
 
 func on_game_over() -> void:
-	print("Game Over!")
-	get_tree().change_scene_to_file("uid://h6x55wwner7e")
-
+	
+	if Globals.items_collected >= items_for_win:
+		get_tree().change_scene_to_file(Globals.game_win_scene)
+	else:
+		get_tree().change_scene_to_file(Globals.game_over_scene)
+	
+	
 func on_item_collected(value):
 	Globals.items_collected += value
-	print("Items Collected: " + str(Globals.items_collected))
 	Globals.score_signal.emit("Score: "+ str(Globals.items_collected))
 	
 	

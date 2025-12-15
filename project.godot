@@ -13,7 +13,10 @@ config_version=5
 config/name="ECS 2D Template"
 run/main_scene="uid://bw2n85403ll4k"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/fullsize=false
+boot_splash/image="uid://d2xodxkwtwxfr"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=3000
 
 [autoload]
 

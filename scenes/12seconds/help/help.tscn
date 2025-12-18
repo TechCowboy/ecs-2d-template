@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://xmboejl36pyl"]
+[gd_scene load_steps=3 format=3 uid="uid://xmboejl36pyl"]
 
 [ext_resource type="Texture2D" uid="uid://dxb2dkc4kuig3" path="res://assets/win.png" id="1_kjixg"]
+[ext_resource type="Script" uid="uid://dd4sgljfcnhn4" path="res://scenes/12seconds/help/help.gd" id="1_v5bra"]
 
 [node name="Help" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_v5bra")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576.7301, 337.2499)
@@ -45,25 +47,25 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/PanelContainer/MarginContainer/Control/VBoxContainer"]
+[node name="Title" type="RichTextLabel" parent="CanvasLayer/PanelContainer/MarginContainer/Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "STR_TITLE
-"
+text = "STR_TITLE"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/PanelContainer/MarginContainer/Control/VBoxContainer"]
+[node name="Description" type="RichTextLabel" parent="CanvasLayer/PanelContainer/MarginContainer/Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "STR_GAME_PLAY
-"
+text = "STR_GAME_PLAY"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/Control"]
+[node name="PreviousMenu" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/Control"]
 layout_mode = 0
 offset_top = 597.0
 offset_right = 1132.0
 offset_bottom = 628.0
 text = "Return to Main Menu"
+
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/Control/PreviousMenu" to="." method="_on_previous_menu_pressed"]

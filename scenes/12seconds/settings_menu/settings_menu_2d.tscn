@@ -1,172 +1,192 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjgq2x8wiyyqw"]
+[gd_scene load_steps=6 format=3 uid="uid://bjgq2x8wiyyqw"]
 
 [ext_resource type="Script" uid="uid://c7i7ldjk2j2mb" path="res://scenes/12seconds/settings_menu/settings_menu_2d.gd" id="1_8ij0w"]
+[ext_resource type="AudioStream" uid="uid://oa1drv52vmhn" path="res://assets/music/christmas-background-431808-pixabay.mp3" id="2_67un7"]
+[ext_resource type="AudioStream" uid="uid://dlc6nv0v60kbt" path="res://assets/music/game-bonus-02-294436-pixabay.mp3" id="3_jgcqq"]
+[ext_resource type="AudioStream" uid="uid://dqluhst2ljuf4" path="res://assets/music/horse-neigh-390297-pixabay-com.mp3" id="4_j1v1f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ro661"]
 
-[node name="SettingsMenu2D" type="CenterContainer"]
+[node name="SettingMenu2D" type="CanvasLayer"]
+script = ExtResource("1_8ij0w")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8ij0w")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="TitleLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ro661")
+text = "STR_SETTINGS"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4"]
 layout_mode = 2
 theme_override_constants/separation = 19
 
-[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer3"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_ro661")
-text = "STR_SETTINGS"
-horizontal_alignment = 1
-
-[node name="GridContainer2" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="GridContainer2" type="GridContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer"]
 layout_mode = 2
 columns = 3
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 19
 columns = 3
 
-[node name="SoundMarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+[node name="SoundMarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer"]
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer"]
 layout_mode = 2
 theme_override_constants/v_separation = 19
 
-[node name="TitleSound" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
+[node name="TitleSound" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_ro661")
 text = "STR_SOUND"
 horizontal_alignment = 1
 
-[node name="MasterLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
+[node name="MasterLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "STR_MASTER_VOLUME"
 
-[node name="MasterVolumeHSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
+[node name="MasterVolumeHSlider" type="HSlider" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 max_value = 1.0
 step = 0.001
 
-[node name="MusicLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
+[node name="MusicLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "STR_MUSIC_VOLUME"
 
-[node name="MusicVolumeHSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
+[node name="MusicVolumeHSlider" type="HSlider" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 max_value = 1.0
 step = 0.001
 
-[node name="SFXLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
+[node name="SFXLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "STR_SOUND_FX_VOLUME"
 
-[node name="SoundEffectsVolumeHSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
+[node name="SoundEffectsVolumeHSlider" type="HSlider" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 max_value = 1.0
 step = 0.001
 
-[node name="SplashLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
+[node name="SplashLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
 layout_mode = 2
 text = "STR_SPLASH_VOLUME"
 
-[node name="SplashVolumeHSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
+[node name="SplashVolumeHSlider" type="HSlider" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 max_value = 1.0
 step = 0.001
 
-[node name="TitleLabel3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_ro661")
-text = "STR_ACTIONS"
-horizontal_alignment = 1
+alignment = 1
 
-[node name="SaveButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
+[node name="SaveButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "STR_SAVE"
 
-[node name="FactoryResetButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer"]
+[node name="FactoryResetButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "STR_FACTORY_RESET"
 
-[node name="MarginContainer4" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="PreviousButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer4"]
+[node name="PreviousButton" type="Button" parent="CenterContainer/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 8
 text = "STR_PREVIOUS_MENU"
 
-[node name="Sounds" type="Node2D" parent="."]
+[node name="Sounds" type="Node2D" parent="CenterContainer"]
 
-[node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
+[node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="CenterContainer/Sounds"]
 unique_name_in_owner = true
+stream = ExtResource("2_67un7")
+bus = &"Music"
 
-[node name="SFXAudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
+[node name="SFXAudioStreamPlayer" type="AudioStreamPlayer" parent="CenterContainer/Sounds"]
 unique_name_in_owner = true
+stream = ExtResource("3_jgcqq")
+bus = &"SFX"
 
-[node name="SplashAudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
+[node name="SplashAudioStreamPlayer" type="AudioStreamPlayer" parent="CenterContainer/Sounds"]
 unique_name_in_owner = true
+stream = ExtResource("4_j1v1f")
+bus = &"Splash"
 
-[connection signal="drag_ended" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/MasterVolumeHSlider" to="." method="_on_master_volume_h_slider_drag_ended"]
-[connection signal="drag_started" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/MasterVolumeHSlider" to="." method="_on_master_volume_h_slider_drag_started"]
-[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/MasterVolumeHSlider" to="." method="_on_master_volume_h_slider_value_changed"]
-[connection signal="drag_ended" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/MusicVolumeHSlider" to="." method="_on_music_volume_h_slider_drag_ended"]
-[connection signal="drag_started" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/MusicVolumeHSlider" to="." method="_on_music_volume_h_slider_drag_started"]
-[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/MusicVolumeHSlider" to="." method="_on_music_volume_h_slider_value_changed"]
-[connection signal="drag_ended" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/SoundEffectsVolumeHSlider" to="." method="_on_sound_effects_volume_h_slider_drag_ended"]
-[connection signal="drag_started" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/SoundEffectsVolumeHSlider" to="." method="_on_sound_effects_volume_h_slider_drag_started"]
-[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/SoundEffectsVolumeHSlider" to="." method="_on_sound_effects_volume_h_slider_value_changed"]
-[connection signal="drag_ended" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/SplashVolumeHSlider" to="." method="_on_splash_volume_h_slider_drag_ended"]
-[connection signal="drag_started" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/SplashVolumeHSlider" to="." method="_on_splash_volume_h_slider_drag_started"]
-[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/SplashVolumeHSlider" to="." method="_on_splash_volume_h_slider_value_changed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/SaveButton" to="." method="_on_save_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/FactoryResetButton" to="." method="_on_factory_reset_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer4/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="drag_ended" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/MasterVolumeHSlider" to="." method="_on_master_volume_h_slider_drag_ended"]
+[connection signal="drag_started" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/MasterVolumeHSlider" to="." method="_on_master_volume_h_slider_drag_started"]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/MasterVolumeHSlider" to="." method="_on_master_volume_h_slider_value_changed"]
+[connection signal="drag_ended" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/MusicVolumeHSlider" to="." method="_on_music_volume_h_slider_drag_ended"]
+[connection signal="drag_started" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/MusicVolumeHSlider" to="." method="_on_music_volume_h_slider_drag_started"]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/MusicVolumeHSlider" to="." method="_on_music_volume_h_slider_value_changed"]
+[connection signal="drag_ended" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/SoundEffectsVolumeHSlider" to="." method="_on_sound_effects_volume_h_slider_drag_ended"]
+[connection signal="drag_started" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/SoundEffectsVolumeHSlider" to="." method="_on_sound_effects_volume_h_slider_drag_started"]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/SoundEffectsVolumeHSlider" to="." method="_on_sound_effects_volume_h_slider_value_changed"]
+[connection signal="drag_ended" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/SplashVolumeHSlider" to="." method="_on_splash_volume_h_slider_drag_ended"]
+[connection signal="drag_started" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/SplashVolumeHSlider" to="." method="_on_splash_volume_h_slider_drag_started"]
+[connection signal="value_changed" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer/GridContainer/SoundMarginContainer/CenterContainer/GridContainer/SplashVolumeHSlider" to="." method="_on_splash_volume_h_slider_value_changed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2/FactoryResetButton" to="." method="_on_factory_reset_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="finished" from="CenterContainer/Sounds/MusicAudioStreamPlayer" to="." method="_on_music_audio_stream_player_finished"]
+[connection signal="finished" from="CenterContainer/Sounds/SFXAudioStreamPlayer" to="." method="_on_sfx_audio_stream_player_finished"]
+[connection signal="finished" from="CenterContainer/Sounds/SplashAudioStreamPlayer" to="." method="_on_splash_audio_stream_player_finished"]

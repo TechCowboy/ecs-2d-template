@@ -1,4 +1,4 @@
-extends CenterContainer
+extends CanvasLayer
 
 var previous_master_volume
 var previous_music_volume
@@ -30,7 +30,7 @@ func _ready() -> void:
 	
 	GameSettings.read_settings()
 	
-	Globals.am.change_background_music.emit("")
+	Globals.am.change_music.emit("")
 	
 	set_buttons()
 			
@@ -140,8 +140,6 @@ func _on_sound_effects_volume_h_slider_drag_started() -> void:
 	sfx_audio_stream_player.play()
 	music_audio_stream_player.stream_paused = true
 	splash_audio_stream_player.stream_paused = true
-
-
 
 func _on_sound_effects_volume_h_slider_drag_ended(_value_changed: bool) -> void:
 	sfx_audio_stream_player.stream_paused = true

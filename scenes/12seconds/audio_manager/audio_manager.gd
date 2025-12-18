@@ -1,22 +1,28 @@
 class_name AudioManager extends Node2D
 
-var current_background_music:AudioStream
+var current_background_music:AudioStream = null
 var current_background_music_file:String = ""
 
-signal change_background_music(music)
+signal change_music(music)
 
-@onready var background_music: AudioStreamPlayer2D = $BackgroundMusic
-@onready var sfx: AudioStreamPlayer2D = $SFX
-@onready var splash: AudioStreamPlayer2D = $Splash
+var background_music: AudioStreamPlayer = null
+var sfx: AudioStreamPlayer 				= null
+var splash: AudioStreamPlayer 			= null
 
 func _init() -> void:
-	background_music = AudioStreamPlayer2D.new()
-	change_background_music.connect(on_change_background_music)
+	change_music.connect(on_change_music)
 
-func set_background_music(bgm:AudioStreamPlayer2D):
-	background_music = bgm
-
-func on_change_background_music(music):
+func set_music_player(music_player:AudioStreamPlayer):
+	background_music = music_player
+	
+func set_SFX_player(sfx_player:AudioStreamPlayer):
+	sfx = sfx_player
+	
+func set_splash_player(splash_player:AudioStreamPlayer):
+	splash = splash_player
+	
+	
+func on_change_music(music):
 	
 	if music == "":
 		background_music.stream_paused = true

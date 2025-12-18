@@ -19,6 +19,7 @@ const game_start_scene 			= "uid://bw2n85403ll4k"
 const game_over_scene 			= "uid://h6x55wwner7e"
 const game_win_scene  			= "uid://dcnh1n4nu4ggb"
 const game_settings_scene 		= "uid://bjgq2x8wiyyqw"
+const game_help_scene			= "uid://xmboejl36pyl"
 
 # Music
 

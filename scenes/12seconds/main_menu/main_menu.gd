@@ -26,7 +26,7 @@ func _ready() -> void:
 	language_options.selected = selected
 	print(languages[keys[selected]])
 	TranslationServer.set_locale(languages[keys[selected]])
-	Globals.am.change_background_music.emit(Globals.music_main_menu)
+	Globals.am.change_music.emit(Globals.music_main_menu)
 
 
 func _on_start_button_pressed() -> void:
@@ -44,7 +44,7 @@ func _on_settings_pressed() -> void:
 	#.change_scene_to_file(Globals.game_settings_scene)
 
 func _on_help_button_pressed() -> void:
-	pass # Replace with function body.
+	Globals.sm.change_scene.emit(Globals.game_help_scene)
 
 func _on_quit_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().quit()

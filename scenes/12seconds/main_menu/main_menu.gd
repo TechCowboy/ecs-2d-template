@@ -38,7 +38,6 @@ func _on_language_item_selected(index: int) -> void:
 	var keys = languages.keys()
 	TranslationServer.set_locale(languages[keys[index]])
 
-
 func _on_settings_pressed() -> void:
 	Globals.sm.change_scene.emit(Globals.game_settings_scene)
 	#.change_scene_to_file(Globals.game_settings_scene)
@@ -48,3 +47,7 @@ func _on_help_button_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_credits_pressed() -> void:
+	Globals.sm.change_scene.emit(Globals.game_credit_scene)

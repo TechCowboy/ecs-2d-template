@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcq6xqh28o4wo"]
+
+[ext_resource type="Texture2D" uid="uid://dt8510otyg10w" path="res://assets/images/sand-7551701_1920-pixabay.png" id="1_v0swh"]
+[ext_resource type="Texture2D" uid="uid://c2jaey6kbbex6" path="res://assets/images/flipped_sand-7551701_1920-pixabay.png" id="2_cjnnq"]
+
+[node name="Sands" type="Node2D"]
+
+[node name="sand-7551701_1920-pixabay" type="Sprite2D" parent="."]
+position = Vector2(-549.90814, 213.99998)
+scale = Vector2(0.9521791, 1.0457872)
+texture = ExtResource("1_v0swh")
+
+[node name="sand-7551701_1920-pixabay2" type="Sprite2D" parent="."]
+position = Vector2(1089.4081, 214.60895)
+scale = Vector2(0.7912416, 1.0433018)
+texture = ExtResource("2_cjnnq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-1432, 371, -1138, 325, -880, 270, -554, 187, -334, 151, -159, 123, 39, 215, 264, 321, 429, 307, 595, 155, 677, 72, 829, 68, 1004, 169, 1353, 275, 1629, 325, 1822, 371)

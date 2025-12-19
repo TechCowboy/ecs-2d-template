@@ -17,12 +17,6 @@ items_for_win = 4
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("4_7c106")]
 
-[node name="Player" parent="." instance=ExtResource("5_a8qxr")]
-position = Vector2(336, 245)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-103, 84)
-
 [node name="Sands" parent="." instance=ExtResource("8_4cdag")]
 
 [node name="Coin2" parent="." instance=ExtResource("7_bwyn1")]
@@ -45,3 +39,9 @@ position = Vector2(-1067, 26)
 
 [node name="Coin3" parent="." instance=ExtResource("7_bwyn1")]
 position = Vector2(-389, 62)
+
+[node name="Player" parent="." instance=ExtResource("5_a8qxr")]
+position = Vector2(336, 245)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-103, 84)

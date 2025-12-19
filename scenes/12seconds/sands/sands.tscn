@@ -18,4 +18,29 @@ texture = ExtResource("2_cjnnq")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-1432, 371, -1138, 325, -880, 270, -554, 187, -334, 151, -159, 123, 39, 215, 264, 321, 429, 307, 595, 155, 677, 72, 829, 68, 1004, 169, 1353, 275, 1629, 325, 1822, 371)
+polygon = PackedVector2Array(-1432, 371, -1138, 325, -880, 270, -554, 187, -334, 151, -268, 133, -205, 104, -118, 80, -39, 86, 1, 92, 165, 218, 335, 285, 426, 269, 582, 134, 677, 72, 829, 68, 1004, 169, 1353, 275, 1629, 325, 1822, 371)
+one_way_collision = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PackedVector2Array(-1322, 238, -1148, 175, -1065, 157, -946, 178, -850, 173, -645, 160, -726, 201, -1429, 287)
+one_way_collision = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+polygon = PackedVector2Array(-1423, 240, -1333, 196, -1255, 137, -1180, 87, -1117, 56, -1047, 74, -954, 87, -876, 61, -754, 22, -694, -1, -601, 4, -521, 43)
+one_way_collision = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
+polygon = PackedVector2Array(1055, 128, 1125, 108, 1206, 103, 1260, 95, 1341, 92, 1409, 90, 1511, 60, 1556, 50, 1616, 79, 1676, 140, 1729, 188, 1779, 223, 1828, 251, 1554, 78)
+one_way_collision = true
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D5"]
+polygon = PackedVector2Array(993, 88, 1051, 51, 1101, 16, 1144, -2, 1186, -5, 1238, 4, 1285, 32, 1337, 58)
+one_way_collision = true

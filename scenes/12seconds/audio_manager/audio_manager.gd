@@ -3,45 +3,99 @@ class_name AudioManager extends Node2D
 var current_background_music:AudioStream = null
 var current_background_music_file:String = ""
 
-signal change_music(music)
+var master_bus_index
+var music_bus_index
+var sfx_bus_index
+var splash_bus_index
 
-var background_music: AudioStreamPlayer = null
-var sfx: AudioStreamPlayer 				= null
-var splash: AudioStreamPlayer 			= null
+const SOUND_KEY_MASTER	= "Master"
+const SOUND_KEY_MUSIC	= "Music"
+const SOUND_KEY_SFX		= "SFX"
+const SOUND_KEY_SPLASH  = "Splash"
+
+signal play_music(music)
+signal play_sfx(sound)
+signal sfx_finished()
+
+var _music:  AudioStreamPlayer 	= null
+var _sfx:    AudioStreamPlayer 	= null
+var _splash: AudioStreamPlayer 	= null
 
 func _init() -> void:
-	change_music.connect(on_change_music)
-
+	master_bus_index 	= AudioServer.get_bus_index("Master")
+	music_bus_index 	= AudioServer.get_bus_index("Music")
+	sfx_bus_index 		= AudioServer.get_bus_index("SFX")
+	splash_bus_index 	= AudioServer.get_bus_index("Splash")
+	
+	play_music.connect(on_change_music)
+	play_sfx.connect(on_sfx)
+	
 func set_music_player(music_player:AudioStreamPlayer):
-	background_music = music_player
+	_music = music_player
+	_music.bus = SOUND_KEY_MUSIC
 	
 func set_SFX_player(sfx_player:AudioStreamPlayer):
-	sfx = sfx_player
+	_sfx = sfx_player
+	_sfx.bus = SOUND_KEY_SFX
+	_sfx.finished.connect(on_sfx_finished)
 	
 func set_splash_player(splash_player:AudioStreamPlayer):
-	splash = splash_player
+	_splash = splash_player
+	_splash.bus = SOUND_KEY_SPLASH
 	
+func set_master_volume(value):
+	AudioServer.set_bus_volume_linear(master_bus_index, value)
 	
-func on_change_music(music):
+func set_music_volume(value):
+	AudioServer.set_bus_volume_linear(music_bus_index, value)
 	
-	if music == "":
-		background_music.stream_paused = true
-		background_music.playing = false
-		background_music.autoplay= false
+func set_SFX_volume(value):
+	AudioServer.set_bus_volume_linear(sfx_bus_index, value)
+	
+func set_splash_volume(value):
+	AudioServer.set_bus_volume_linear(splash_bus_index, value)
+		
+func on_change_music(new_music):
+	
+	if new_music == "":
+		_music.stream_paused = true
+		_music.playing = false
+		_music.autoplay= false
 		current_background_music_file = ""
 		return
 		
-	if music == current_background_music_file:
+	if new_music == current_background_music_file:
 		return
 		
-	current_background_music_file = music
+	current_background_music_file = new_music
 	
-	current_background_music = load(music)
+	current_background_music = load(new_music)
 
-	background_music.stream = current_background_music
-	background_music.stream.loop = true
-	background_music.playing = true
-	background_music.autoplay = true
+	_music.stream = current_background_music
+	_music.stream.loop = true
+	_music.playing = true
+	_music.autoplay = true
+
+
+func on_sfx(new_sfx):
+	var current_sfx
+	
+	if new_sfx == "":
+		_sfx.stream_paused = true
+		_sfx.playing = false
+		_sfx.autoplay= false
+		return
+				
+	current_sfx = load(new_sfx)
+
+	_sfx.stream = current_sfx
+	_sfx.stream.loop = false
+	_sfx.playing = true
+	_sfx.autoplay = true
+	
+func on_sfx_finished():
+	print("finished")
+	sfx_finished.emit()
 
 
 	

@@ -26,7 +26,7 @@ func _ready() -> void:
 	language_options.selected = selected
 	print(languages[keys[selected]])
 	TranslationServer.set_locale(languages[keys[selected]])
-	Globals.am.change_music.emit(Globals.music_main_menu)
+	Globals.am.play_music.emit(Globals.music_main_menu)
 
 
 func _on_start_button_pressed() -> void:

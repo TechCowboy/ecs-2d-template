@@ -27,6 +27,10 @@ const game_credit_scene			= "uid://dwl22b5yqxexb"
 const music_main_menu			= "uid://oa1drv52vmhn"
 const music_gameplay  			= "uid://c25hggegspgmi"
 
+# Sound Effects
+
+const sfx_item_collected 		= "uid://dlc6nv0v60kbt"
+
 const items_needed = 12
 
 var items_collected = 0

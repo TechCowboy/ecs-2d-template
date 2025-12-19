@@ -19,10 +19,18 @@ items_for_win = 4
 
 [node name="Sands" parent="." instance=ExtResource("8_4cdag")]
 
-[node name="Coin2" parent="." instance=ExtResource("7_bwyn1")]
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("7_bwyn1")]
+position = Vector2(-1067, 26)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("7_bwyn1")]
 position = Vector2(-792, 225)
 
-[node name="Death" parent="." instance=ExtResource("8_eyi0r")]
+[node name="Coin3" parent="Coins" instance=ExtResource("7_bwyn1")]
+position = Vector2(-389, 62)
+
+[node name="InstantDeath" parent="." instance=ExtResource("8_eyi0r")]
 position = Vector2(682, 1041)
 scale = Vector2(2, 2)
 
@@ -34,14 +42,8 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(936, 92)
 scale = Vector2(0.5, 0.5)
 
-[node name="Coin" parent="." instance=ExtResource("7_bwyn1")]
-position = Vector2(-1067, 26)
-
-[node name="Coin3" parent="." instance=ExtResource("7_bwyn1")]
-position = Vector2(-389, 62)
-
 [node name="Player" parent="." instance=ExtResource("5_a8qxr")]
-position = Vector2(336, 245)
+position = Vector2(336, 220)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-103, 84)

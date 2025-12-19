@@ -6,7 +6,7 @@ extends Node2D
 func _ready() -> void:
 	Globals.game_over_signal.connect(on_game_over)
 	Globals.items_collected_signal.connect(on_item_collected)
-	Globals.am.change_music.emit(Globals.music_gameplay)
+	Globals.am.play_music.emit(Globals.music_gameplay)
 	
 
 func on_game_over() -> void:

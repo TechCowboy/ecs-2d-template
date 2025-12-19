@@ -14,7 +14,8 @@ config/name="ECS 2D Template"
 run/main_scene="uid://cojhc0wij2asn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/fullsize=false
-boot_splash/image="uid://d2xodxkwtwxfr"
+boot_splash/use_filter=false
+boot_splash/image="uid://cv02m1wtebmvq"
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=3000
 

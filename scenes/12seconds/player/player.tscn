@@ -1,18 +1,400 @@
-[gd_scene load_steps=4 format=3 uid="uid://52ku7f34owj7"]
+[gd_scene load_steps=94 format=3 uid="uid://52ku7f34owj7"]
 
 [ext_resource type="Script" uid="uid://bi624ihywdcmo" path="res://scenes/12seconds/player/player.gd" id="1_ooeli"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_x24yy"]
-radius = 10.0
-height = 30.0
+[ext_resource type="Texture2D" uid="uid://pmvm8r7chons" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_000.png" id="2_gwvyi"]
+[ext_resource type="Texture2D" uid="uid://dylbnaeslxp2p" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_001.png" id="3_y7gmm"]
+[ext_resource type="Texture2D" uid="uid://bwpmf0i0otju2" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_002.png" id="4_68yxu"]
+[ext_resource type="Texture2D" uid="uid://bq66j6lm1rm1" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_003.png" id="5_8fvbd"]
+[ext_resource type="Texture2D" uid="uid://7iffjl4kh0wx" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_004.png" id="6_x6poq"]
+[ext_resource type="Texture2D" uid="uid://bn60lsgqs3848" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_005.png" id="7_7d6wn"]
+[ext_resource type="Texture2D" uid="uid://2cniwcvql5wp" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_006.png" id="8_vjbfv"]
+[ext_resource type="Texture2D" uid="uid://btg2sd5hfbvws" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_007.png" id="9_i7cdl"]
+[ext_resource type="Texture2D" uid="uid://dl6vafnxl2kvm" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_008.png" id="10_p0vmm"]
+[ext_resource type="Texture2D" uid="uid://bkepvkdkl1mgh" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_009.png" id="11_7a6cb"]
+[ext_resource type="Texture2D" uid="uid://bdrt048fhhp5u" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_010.png" id="12_l40p5"]
+[ext_resource type="Texture2D" uid="uid://cxsg2qhdrmkn8" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_011.png" id="13_m1dsr"]
+[ext_resource type="Texture2D" uid="uid://dokgony6k1opk" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_012.png" id="14_02a3f"]
+[ext_resource type="Texture2D" uid="uid://eb6d1fccfsbd" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_013.png" id="15_hj42w"]
+[ext_resource type="Texture2D" uid="uid://cfmyurpcxvlrh" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_014.png" id="16_7jo1s"]
+[ext_resource type="Texture2D" uid="uid://btjykqwcuyndo" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_015.png" id="17_03183"]
+[ext_resource type="Texture2D" uid="uid://bfn7kosg0exjb" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_016.png" id="18_001uu"]
+[ext_resource type="Texture2D" uid="uid://bn7qdxou57o63" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_017.png" id="19_n356v"]
+[ext_resource type="Texture2D" uid="uid://bf13tuqhctw54" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_018.png" id="20_uuux3"]
+[ext_resource type="Texture2D" uid="uid://c0hdjuwk4aynp" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_019.png" id="21_fregb"]
+[ext_resource type="Texture2D" uid="uid://nsqmujofxo5y" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_020.png" id="22_yb7jf"]
+[ext_resource type="Texture2D" uid="uid://b0xou2swdyopn" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_021.png" id="23_njf40"]
+[ext_resource type="Texture2D" uid="uid://bjexegruuptyc" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_022.png" id="24_447hw"]
+[ext_resource type="Texture2D" uid="uid://bhntsvak5ryt5" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_023.png" id="25_b2qjy"]
+[ext_resource type="Texture2D" uid="uid://dbdjsmh3q26e4" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_024.png" id="26_5kdpn"]
+[ext_resource type="Texture2D" uid="uid://ctitlbqf51uus" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_025.png" id="27_6numc"]
+[ext_resource type="Texture2D" uid="uid://d18j3ch4ka0kq" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_026.png" id="28_yopyw"]
+[ext_resource type="Texture2D" uid="uid://cgqgynfi8drg2" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_027.png" id="29_4neq3"]
+[ext_resource type="Texture2D" uid="uid://clga4osflrjld" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_028.png" id="30_2rck5"]
+[ext_resource type="Texture2D" uid="uid://cpormgjx7kqro" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Front/PNG Sequences/Idle Blinking/0_Citizen_Idle Blinking_029.png" id="31_homog"]
+[ext_resource type="Texture2D" uid="uid://cd0nw6l6de1ky" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_000.png" id="32_78vjf"]
+[ext_resource type="Texture2D" uid="uid://dqi85yfld8jyq" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_001.png" id="33_d16l4"]
+[ext_resource type="Texture2D" uid="uid://cxyi5amwoqlkl" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_002.png" id="34_qamtl"]
+[ext_resource type="Texture2D" uid="uid://cqtg5pgrrjl1s" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_003.png" id="35_38ham"]
+[ext_resource type="Texture2D" uid="uid://soaruglf8k8y" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_004.png" id="36_y035m"]
+[ext_resource type="Texture2D" uid="uid://bb8tadtyludji" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_005.png" id="37_28ux5"]
+[ext_resource type="Texture2D" uid="uid://cj0ivtwreda3u" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_006.png" id="38_nvno0"]
+[ext_resource type="Texture2D" uid="uid://bpbr8v6nqggyx" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_007.png" id="39_wqo84"]
+[ext_resource type="Texture2D" uid="uid://bsf3gy7o8s7gq" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_008.png" id="40_kuicl"]
+[ext_resource type="Texture2D" uid="uid://bihi425o53g0k" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_009.png" id="41_4kn1r"]
+[ext_resource type="Texture2D" uid="uid://bmjv2mwvbq313" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_010.png" id="42_8271m"]
+[ext_resource type="Texture2D" uid="uid://b2nvy3btgeyav" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_011.png" id="43_l0mf2"]
+[ext_resource type="Texture2D" uid="uid://bfk8raycoq0ea" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_012.png" id="44_ystcc"]
+[ext_resource type="Texture2D" uid="uid://lt4ixuptw6bv" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_013.png" id="45_mgb83"]
+[ext_resource type="Texture2D" uid="uid://wtbays5f6hu4" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_014.png" id="46_q6yih"]
+[ext_resource type="Texture2D" uid="uid://dvdphqnsxjv66" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_015.png" id="47_roqsq"]
+[ext_resource type="Texture2D" uid="uid://bhg5qc642tosb" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_016.png" id="48_2hwcr"]
+[ext_resource type="Texture2D" uid="uid://bepjg50n0ajuv" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_017.png" id="49_3tfaj"]
+[ext_resource type="Texture2D" uid="uid://dy7qf28t4mxji" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_018.png" id="50_amkir"]
+[ext_resource type="Texture2D" uid="uid://urrjqquxx1db" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_019.png" id="51_cnooi"]
+[ext_resource type="Texture2D" uid="uid://bm43r3hr6qxmt" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_020.png" id="52_v38nd"]
+[ext_resource type="Texture2D" uid="uid://smdun4d6nj81" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_021.png" id="53_woqle"]
+[ext_resource type="Texture2D" uid="uid://ds4u6vgemdmid" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_022.png" id="54_83krb"]
+[ext_resource type="Texture2D" uid="uid://bh60q4vcbo403" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_023.png" id="55_5kasl"]
+[ext_resource type="Texture2D" uid="uid://vejrfakykxwd" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_024.png" id="56_30uds"]
+[ext_resource type="Texture2D" uid="uid://dnyaig8q5fybs" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_025.png" id="57_voylx"]
+[ext_resource type="Texture2D" uid="uid://cb2e00ye3y64l" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_026.png" id="58_617ln"]
+[ext_resource type="Texture2D" uid="uid://b5duullfc3oq7" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_027.png" id="59_qohjx"]
+[ext_resource type="Texture2D" uid="uid://b027e6kanhmu8" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_028.png" id="60_yaw6r"]
+[ext_resource type="Texture2D" uid="uid://o5uryir0ohp8" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Idle/0_Citizen_Idle_029.png" id="61_wcwc8"]
+[ext_resource type="Texture2D" uid="uid://120tg7miin78" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_000.png" id="62_tbko8"]
+[ext_resource type="Texture2D" uid="uid://lrqousvh20k1" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_001.png" id="63_ex8d4"]
+[ext_resource type="Texture2D" uid="uid://cbay2hk40q3xw" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_002.png" id="64_bhy5f"]
+[ext_resource type="Texture2D" uid="uid://bs34r2nlkt35k" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_003.png" id="65_0iu5c"]
+[ext_resource type="Texture2D" uid="uid://cc571qx10p4ys" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_004.png" id="66_aw411"]
+[ext_resource type="Texture2D" uid="uid://c1hg84bycypcl" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_005.png" id="67_qldix"]
+[ext_resource type="Texture2D" uid="uid://dggiqw05xrxlt" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_006.png" id="68_1loyh"]
+[ext_resource type="Texture2D" uid="uid://qtbkgf4merhs" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_007.png" id="69_gjdl0"]
+[ext_resource type="Texture2D" uid="uid://brk1d557qs6gk" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_008.png" id="70_dj3g0"]
+[ext_resource type="Texture2D" uid="uid://b63op3ghgdgaw" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_009.png" id="71_rsofi"]
+[ext_resource type="Texture2D" uid="uid://bic2xpgcungqc" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_010.png" id="72_x7cqe"]
+[ext_resource type="Texture2D" uid="uid://dtmhj7t2pi1fh" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_011.png" id="73_mbe8v"]
+[ext_resource type="Texture2D" uid="uid://blxtbloktaq8q" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_012.png" id="74_wfx3j"]
+[ext_resource type="Texture2D" uid="uid://dbnyv2qsc68u2" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_013.png" id="75_jnu4n"]
+[ext_resource type="Texture2D" uid="uid://xvh08n2lcf6r" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_014.png" id="76_xvqui"]
+[ext_resource type="Texture2D" uid="uid://b4anghmpkomek" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_015.png" id="77_ti2av"]
+[ext_resource type="Texture2D" uid="uid://r2t313b6bpwm" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_016.png" id="78_yhcl1"]
+[ext_resource type="Texture2D" uid="uid://q7ess0p32bo8" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_017.png" id="79_0w68o"]
+[ext_resource type="Texture2D" uid="uid://demrr37eha6j3" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_018.png" id="80_4qfbp"]
+[ext_resource type="Texture2D" uid="uid://ctsl7bsqx8h5l" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_019.png" id="81_e0to5"]
+[ext_resource type="Texture2D" uid="uid://clctdpt35837q" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_020.png" id="82_oyl42"]
+[ext_resource type="Texture2D" uid="uid://b0464j0dbyow8" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_021.png" id="83_i0rbp"]
+[ext_resource type="Texture2D" uid="uid://y5f2yqpgd4ah" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_022.png" id="84_mm0by"]
+[ext_resource type="Texture2D" uid="uid://cadmrox3445at" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_023.png" id="85_i5lm8"]
+[ext_resource type="Texture2D" uid="uid://dmtf6q3chs8av" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_024.png" id="86_h2y3k"]
+[ext_resource type="Texture2D" uid="uid://ei1ho7k0bss8" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_025.png" id="87_fnj25"]
+[ext_resource type="Texture2D" uid="uid://1pvoodj6g6iv" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_026.png" id="88_htvlv"]
+[ext_resource type="Texture2D" uid="uid://df05bad5tu5h0" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_027.png" id="89_0pjt7"]
+[ext_resource type="Texture2D" uid="uid://d0krakk6jrgbq" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_028.png" id="90_5ihpx"]
+[ext_resource type="Texture2D" uid="uid://twkauipkpl46" path="res://assets/craftpix-987611-free-citizen-artist-astrologer-4-direction-npc-character-pack/Citizen/PNG/Side/PNG Sequences/Walk/0_Citizen_Walk_029.png" id="91_tibyp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ooeli"]
+radius = 50.0
+height = 150.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hd0kr"]
+animations = [{
+"frames": [{
+"duration": 0.1,
+"texture": ExtResource("2_gwvyi")
+}, {
+"duration": 0.3,
+"texture": ExtResource("3_y7gmm")
+}, {
+"duration": 0.3,
+"texture": ExtResource("4_68yxu")
+}, {
+"duration": 0.3,
+"texture": ExtResource("5_8fvbd")
+}, {
+"duration": 0.3,
+"texture": ExtResource("6_x6poq")
+}, {
+"duration": 0.3,
+"texture": ExtResource("7_7d6wn")
+}, {
+"duration": 0.3,
+"texture": ExtResource("8_vjbfv")
+}, {
+"duration": 0.3,
+"texture": ExtResource("9_i7cdl")
+}, {
+"duration": 0.3,
+"texture": ExtResource("10_p0vmm")
+}, {
+"duration": 0.3,
+"texture": ExtResource("11_7a6cb")
+}, {
+"duration": 0.3,
+"texture": ExtResource("12_l40p5")
+}, {
+"duration": 0.3,
+"texture": ExtResource("13_m1dsr")
+}, {
+"duration": 0.3,
+"texture": ExtResource("14_02a3f")
+}, {
+"duration": 0.3,
+"texture": ExtResource("15_hj42w")
+}, {
+"duration": 0.3,
+"texture": ExtResource("16_7jo1s")
+}, {
+"duration": 0.3,
+"texture": ExtResource("17_03183")
+}, {
+"duration": 0.3,
+"texture": ExtResource("18_001uu")
+}, {
+"duration": 0.3,
+"texture": ExtResource("19_n356v")
+}, {
+"duration": 0.3,
+"texture": ExtResource("20_uuux3")
+}, {
+"duration": 0.3,
+"texture": ExtResource("21_fregb")
+}, {
+"duration": 0.3,
+"texture": ExtResource("22_yb7jf")
+}, {
+"duration": 0.3,
+"texture": ExtResource("23_njf40")
+}, {
+"duration": 0.3,
+"texture": ExtResource("24_447hw")
+}, {
+"duration": 0.3,
+"texture": ExtResource("25_b2qjy")
+}, {
+"duration": 0.3,
+"texture": ExtResource("26_5kdpn")
+}, {
+"duration": 0.3,
+"texture": ExtResource("27_6numc")
+}, {
+"duration": 0.3,
+"texture": ExtResource("28_yopyw")
+}, {
+"duration": 0.3,
+"texture": ExtResource("29_4neq3")
+}, {
+"duration": 0.3,
+"texture": ExtResource("30_2rck5")
+}, {
+"duration": 0.3,
+"texture": ExtResource("31_homog")
+}],
+"loop": true,
+"name": &"idle front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.01,
+"texture": ExtResource("32_78vjf")
+}, {
+"duration": 0.1,
+"texture": ExtResource("33_d16l4")
+}, {
+"duration": 0.1,
+"texture": ExtResource("34_qamtl")
+}, {
+"duration": 0.1,
+"texture": ExtResource("35_38ham")
+}, {
+"duration": 0.1,
+"texture": ExtResource("36_y035m")
+}, {
+"duration": 0.1,
+"texture": ExtResource("37_28ux5")
+}, {
+"duration": 0.1,
+"texture": ExtResource("38_nvno0")
+}, {
+"duration": 0.1,
+"texture": ExtResource("39_wqo84")
+}, {
+"duration": 0.1,
+"texture": ExtResource("40_kuicl")
+}, {
+"duration": 0.1,
+"texture": ExtResource("41_4kn1r")
+}, {
+"duration": 0.1,
+"texture": ExtResource("42_8271m")
+}, {
+"duration": 0.1,
+"texture": ExtResource("43_l0mf2")
+}, {
+"duration": 0.1,
+"texture": ExtResource("44_ystcc")
+}, {
+"duration": 0.1,
+"texture": ExtResource("45_mgb83")
+}, {
+"duration": 0.1,
+"texture": ExtResource("46_q6yih")
+}, {
+"duration": 0.1,
+"texture": ExtResource("47_roqsq")
+}, {
+"duration": 0.1,
+"texture": ExtResource("48_2hwcr")
+}, {
+"duration": 0.1,
+"texture": ExtResource("49_3tfaj")
+}, {
+"duration": 0.1,
+"texture": ExtResource("50_amkir")
+}, {
+"duration": 0.1,
+"texture": ExtResource("51_cnooi")
+}, {
+"duration": 0.1,
+"texture": ExtResource("52_v38nd")
+}, {
+"duration": 0.1,
+"texture": ExtResource("53_woqle")
+}, {
+"duration": 0.1,
+"texture": ExtResource("54_83krb")
+}, {
+"duration": 0.1,
+"texture": ExtResource("55_5kasl")
+}, {
+"duration": 0.1,
+"texture": ExtResource("56_30uds")
+}, {
+"duration": 0.1,
+"texture": ExtResource("57_voylx")
+}, {
+"duration": 0.1,
+"texture": ExtResource("58_617ln")
+}, {
+"duration": 0.1,
+"texture": ExtResource("59_qohjx")
+}, {
+"duration": 0.1,
+"texture": ExtResource("60_yaw6r")
+}, {
+"duration": 0.1,
+"texture": ExtResource("61_wcwc8")
+}],
+"loop": true,
+"name": &"idle side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.1,
+"texture": ExtResource("62_tbko8")
+}, {
+"duration": 0.1,
+"texture": ExtResource("63_ex8d4")
+}, {
+"duration": 0.1,
+"texture": ExtResource("64_bhy5f")
+}, {
+"duration": 0.1,
+"texture": ExtResource("65_0iu5c")
+}, {
+"duration": 0.1,
+"texture": ExtResource("66_aw411")
+}, {
+"duration": 0.1,
+"texture": ExtResource("67_qldix")
+}, {
+"duration": 0.1,
+"texture": ExtResource("68_1loyh")
+}, {
+"duration": 0.1,
+"texture": ExtResource("69_gjdl0")
+}, {
+"duration": 0.1,
+"texture": ExtResource("70_dj3g0")
+}, {
+"duration": 0.1,
+"texture": ExtResource("71_rsofi")
+}, {
+"duration": 0.1,
+"texture": ExtResource("72_x7cqe")
+}, {
+"duration": 0.1,
+"texture": ExtResource("73_mbe8v")
+}, {
+"duration": 0.1,
+"texture": ExtResource("74_wfx3j")
+}, {
+"duration": 0.1,
+"texture": ExtResource("75_jnu4n")
+}, {
+"duration": 0.1,
+"texture": ExtResource("76_xvqui")
+}, {
+"duration": 0.1,
+"texture": ExtResource("77_ti2av")
+}, {
+"duration": 0.1,
+"texture": ExtResource("78_yhcl1")
+}, {
+"duration": 0.1,
+"texture": ExtResource("79_0w68o")
+}, {
+"duration": 0.1,
+"texture": ExtResource("80_4qfbp")
+}, {
+"duration": 0.1,
+"texture": ExtResource("81_e0to5")
+}, {
+"duration": 0.1,
+"texture": ExtResource("82_oyl42")
+}, {
+"duration": 0.1,
+"texture": ExtResource("83_i0rbp")
+}, {
+"duration": 0.1,
+"texture": ExtResource("84_mm0by")
+}, {
+"duration": 0.1,
+"texture": ExtResource("85_i5lm8")
+}, {
+"duration": 0.1,
+"texture": ExtResource("86_h2y3k")
+}, {
+"duration": 0.1,
+"texture": ExtResource("87_fnj25")
+}, {
+"duration": 0.1,
+"texture": ExtResource("88_htvlv")
+}, {
+"duration": 0.1,
+"texture": ExtResource("89_0pjt7")
+}, {
+"duration": 0.1,
+"texture": ExtResource("90_5ihpx")
+}, {
+"duration": 0.1,
+"texture": ExtResource("91_tibyp")
+}],
+"loop": true,
+"name": &"walk side",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_ooeli")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-mesh = SubResource("CapsuleMesh_x24yy")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 4)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CapsuleShape2D_ooeli")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(-1, -4)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_hd0kr")
+animation = &"idle front"
+frame_progress = 0.55009747

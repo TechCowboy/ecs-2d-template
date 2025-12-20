@@ -16,15 +16,17 @@ const white:Color 	= Color(0xff, 0xff, 0xff)
 
 var progress_style = null
 
+var score_language_specific : String
 
 func _ready() -> void:
 
 	progress_style = get_theme_stylebox("fill").duplicate()
 	add_theme_stylebox_override("fill", progress_style)
 	progress_style.bg_color = white
+	score_language_specific = TranslationServer.translate(score.text)
 	
+	score.text 				= score_language_specific + " 0"
 	
-	score.text 				= "Score: 0"
 	Globals.score_signal.connect(on_score_updated)
 	
 	progress_bar.max_value 	= max_progress_bar
@@ -56,7 +58,7 @@ func _on_timer_timeout() -> void:
 		Globals.game_over_signal.emit()
 		
 func on_score_updated(score_text):
-	score.text = score_text
+	score.text = score_language_specific + score_text
 	
 
 	

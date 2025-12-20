@@ -3,6 +3,7 @@ extends Node
 var am = AudioManager.new()
 var sm = SceneManager.new()
 
+
 @warning_ignore("unused_signal") 
 signal game_over_signal()
 
@@ -11,6 +12,9 @@ signal items_collected_signal(item_value)
 
 @warning_ignore("unused_signal") 
 signal score_signal(score_text)
+
+@warning_ignore("unused_signal") 
+signal move_star_up(amount)
 
 # Scenes
 
@@ -39,4 +43,5 @@ const sfx_item_collected 		= "uid://bmk64c6fq6vsa"
 const splash_intro				= "uid://dqluhst2ljuf4"
 const items_needed = 12
 
+const north_star_increase_amount = -50
 var items_collected = 0

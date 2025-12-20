@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b180gu44u7cs7"]
+
+[ext_resource type="Script" uid="uid://b8cipoqy551jq" path="res://scenes/12seconds/north_star/north_star.gd" id="1_0h6tx"]
+[ext_resource type="Texture2D" uid="uid://ctsxg5j6xxmyn" path="res://assets/images/freepik-com-north_star.png" id="1_h12fb"]
+
+[node name="NorthStar" type="Sprite2D"]
+texture = ExtResource("1_h12fb")
+script = ExtResource("1_0h6tx")

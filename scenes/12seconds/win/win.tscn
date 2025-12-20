@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcnh1n4nu4ggb"]
+[gd_scene load_steps=4 format=3 uid="uid://dcnh1n4nu4ggb"]
 
 [ext_resource type="Script" uid="uid://cyi8wqneimuae" path="res://scenes/12seconds/win/win.gd" id="1_aj5p1"]
 [ext_resource type="Texture2D" uid="uid://ypttmyyeyrv1" path="res://assets/images/ai-generated-8650583_1920.jpg" id="2_r0oly"]
+[ext_resource type="Theme" path="res://themes/title.tres" id="3_eri7j"]
 
 [node name="Win" type="Node2D"]
 script = ExtResource("1_aj5p1")
@@ -28,8 +29,20 @@ alignment = 1
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 6
+theme = ExtResource("3_eri7j")
 theme_override_font_sizes/normal_font_size = 50
-text = "You Won!"
+text = "STR_YOU_WON"
+fit_content = true
+scroll_active = false
+autowrap_trim_flags = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Explaination" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme = ExtResource("3_eri7j")
+text = "STR_WON_DETAILS"
 fit_content = true
 scroll_active = false
 autowrap_trim_flags = 0
@@ -38,6 +51,6 @@ vertical_alignment = 1
 
 [node name="RestartButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-text = "Restart"
+text = "STR_RESTART"
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

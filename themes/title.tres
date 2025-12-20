@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3]
+
+[resource]
+RichTextLabel/constants/outline_size = 5
+RichTextLabel/font_sizes/bold_font_size = 40
+RichTextLabel/font_sizes/normal_font_size = 40

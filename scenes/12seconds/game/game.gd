@@ -21,6 +21,7 @@ func on_game_over() -> void:
 	
 func on_item_collected(value):
 	Globals.items_collected += value
-	Globals.score_signal.emit("Score: "+ str(Globals.items_collected))
+	Globals.score_signal.emit(str(Globals.items_collected))
+	Globals.move_star_up.emit(Globals.north_star_increase_amount)
 	
 	

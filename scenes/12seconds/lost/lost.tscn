@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://h6x55wwner7e"]
+[gd_scene load_steps=4 format=3 uid="uid://h6x55wwner7e"]
 
 [ext_resource type="Script" uid="uid://cc1gowhfmaqhf" path="res://scenes/12seconds/lost/lost.gd" id="1_ex7w0"]
 [ext_resource type="Texture2D" uid="uid://dx44w76m7333v" path="res://assets/images/manger-9223630_1920-pixabay.png" id="2_dueg2"]
+[ext_resource type="Theme" path="res://themes/title.tres" id="2_kwoac"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_ex7w0")
@@ -11,37 +12,49 @@ position = Vector2(573, 331)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="manger-9223630_1920-pixabay" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(558, 341)
-scale = Vector2(0.18241729, 0.1824173)
-texture = ExtResource("2_dueg2")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -0.5
-offset_top = -103.5
-offset_right = -0.5
-offset_bottom = -103.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 69.0
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2"]
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 6
+theme = ExtResource("2_kwoac")
 theme_override_font_sizes/normal_font_size = 50
-text = "Game Over"
+text = "STR_YOU_LOST"
 fit_content = true
 scroll_active = false
 autowrap_trim_flags = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RestartButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
 layout_mode = 2
-text = "Restart"
+alignment = 1
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_kwoac")
+text = "STR_LOST_DETAILS"
+fit_content = true
+scroll_active = false
+autowrap_trim_flags = 0
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_dueg2")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="RestartButton" type="Button" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "STR_RESTART"
+
+[connection signal="pressed" from="VBoxContainer2/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

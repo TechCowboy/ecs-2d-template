@@ -23,3 +23,9 @@ STR_CREDITS,Credits,Crédits
 STR_PROGRAMMING,Programmer:,Programmeur:
 STR_MUSIC_AND_SFX,Music and Special Effects:,Musique et effets spéciaux
 STR_IMAGES,Images,Images
+STR_YOU_WON,You Won!,Vous avez gagné !
+STR_WON_DETAILS,Congratulations! You managed to be there for Jesus's birth! (The wise men didn't show up for two years!),Félicitations ! Vous avez réussi à être là pour la naissance de Jésus ! (Les rois mages ne sont arrivés que deux ans plus tard !)
+STR_YOU_LOST,Mission Failed.,Mission échouée.
+STR_LOST_DETAILS,"Don't feel bad. The wise men were not there when Jesus was born either.  In fact, they didn't show up until Jesus was 2 years old!","Ne t'en fais pas. Les rois mages n'étaient pas là non plus à la naissance de Jésus. En fait, ils ne sont arrivés que lorsque Jésus avait deux ans !"
+STR_RESTART,Try Again,Réessayer
+STR_SCORE,Score:,Note:

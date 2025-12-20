@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
+@onready var player_sprite: AnimatedSprite2D = $CollisionShape2D/AnimatedSprite2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+func _ready() -> void:
+	player_sprite.play("idle front")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -21,5 +24,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if velocity.x == 0:
+		player_sprite.play("idle front")
+	else:
+		player_sprite.flip_h = direction > 0
+		player_sprite.play("walk side")
 
 	move_and_slide()

@@ -30,7 +30,7 @@ func _ready() -> void:
 	
 	GameSettings.read_settings()
 	
-	Globals.am.play_music.emit("")
+	Globals.am.play_music("")
 	
 	set_buttons()
 	
@@ -84,7 +84,7 @@ func _on_previous_button_pressed() -> void:
 	splash_volume_h_slider.value 		= previous_sfx_volume
 	splash_volume_h_slider.value 		= previous_splash_volume
 	
-	Globals.sm.change_scene.emit(Globals.game_main_menu_scene)
+	Globals.sm.change_scene(Globals.game_main_menu_scene)
 	
 
 func _on_master_volume_h_slider_value_changed(value: float) -> void:

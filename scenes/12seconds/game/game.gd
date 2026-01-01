@@ -8,15 +8,15 @@ func _ready() -> void:
 	
 	Globals.game_over_signal.connect(on_game_over)
 	Globals.items_collected_signal.connect(on_item_collected)
-	Globals.am.play_music.emit(Globals.music_gameplay)
+	Globals.am.play_music(Globals.music_gameplay)
 	
 
 func on_game_over() -> void:
 	
 	if Globals.items_collected >= items_for_win:
-		Globals.sm.change_scene.emit(Globals.game_win_scene)
+		Globals.sm.change_scene(Globals.game_win_scene)
 	else:
-		Globals.sm.change_scene.emit(Globals.game_over_scene)
+		Globals.sm.change_scene(Globals.game_over_scene)
 	
 	
 func on_item_collected(value):

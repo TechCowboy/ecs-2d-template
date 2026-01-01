@@ -1,8 +1,12 @@
 extends Node
 
+# Custom Classes
+# Hover over class to see details of use
+
 var am = AudioManager.new()
 var sm = SceneManager.new()
 
+# Signals
 
 @warning_ignore("unused_signal") 
 signal game_over_signal()
@@ -26,6 +30,7 @@ const game_win_scene  			= "uid://dcnh1n4nu4ggb"
 const game_settings_scene 		= "uid://bjgq2x8wiyyqw"
 const game_help_scene			= "uid://xmboejl36pyl"
 const game_credit_scene			= "uid://dwl22b5yqxexb"
+const game_blank_scene			= "uid://bujk7j3dsm3c4"
 
 # Music
 

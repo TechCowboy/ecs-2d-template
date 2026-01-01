@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjgq2x8wiyyqw"]
+[gd_scene load_steps=5 format=3 uid="uid://bjgq2x8wiyyqw"]
 
 [ext_resource type="Script" uid="uid://c7i7ldjk2j2mb" path="res://scenes/12seconds/settings_menu/settings_menu_2d.gd" id="1_8ij0w"]
+[ext_resource type="Theme" uid="uid://cpdtyb2nb8rk6" path="res://themes/12seconds.tres" id="2_gb8jk"]
+[ext_resource type="Theme" path="res://themes/title.tres" id="3_67un7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ro661"]
 
@@ -13,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_gb8jk")
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
 layout_mode = 2
@@ -30,7 +33,7 @@ theme_override_constants/margin_bottom = 20
 [node name="TitleLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_ro661")
+theme = ExtResource("3_67un7")
 text = "STR_SETTINGS"
 horizontal_alignment = 1
 
@@ -51,14 +54,11 @@ theme_override_constants/separation = 19
 
 [node name="MarginContainer3" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_67un7")
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
-
-[node name="GridContainer2" type="GridContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer"]
-layout_mode = 2
-columns = 3
 
 [node name="GridContainer" type="GridContainer" parent="CenterContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer4/VBoxContainer"]
 layout_mode = 2

@@ -16,7 +16,7 @@ STR_CANCEL,Cancel,Annuler
 STR_SAVE,Save Settings,Enregistrer les paramètres
 STR_PREVIOUS_MENU,Previous Menu,Menu précédent
 STR_FACTORY_RESET,Factory Reset,Réinitialisation d'usine
-STR_GAME_PLAY,"This is a short Christmas exploration game where the player gathers symbolic gifts scattered around the desert on the night of Jesus’s birth. When all items are found, the player brings them to the manger.","Il s’agit d’un court jeu d’exploration de Noël dans lequel le joueur rassemble des cadeaux symboliques dispersés dans le désert la nuit de la naissance de Jésus. Lorsque tous les objets ont été trouvés, le joueur les apporte à la crèche."
+STR_GAME_PLAY,"This is a short Christmas exploration game where the player gathers symbolic gifts scattered around the desert on the night of Jesus’s birth. Use keyboard WASD and spacebar, or arrow keys and spacebar, or a joystick.  Button or spacebar to jump.  When all items are found, the player completes their mission.","Il s'agit d'un court jeu d'exploration sur le thème de Noël, où le joueur doit ramasser des cadeaux symboliques éparpillés dans le désert la nuit de la naissance de Jésus. Utilisez les touches WASD et la barre d'espace du clavier, ou les flèches directionnelles et la barre d'espace, ou encore un joystick. Appuyez sur le bouton ou la barre d'espace pour sauter. Une fois tous les objets trouvés, le joueur termine sa mission."
 STR_HELP,How to Play,Comment jouer
 STR_CHOOSE_LANGUAGE,Choose your language,Choisissez votre langue
 STR_CREDITS,Credits,Crédits
@@ -24,8 +24,8 @@ STR_PROGRAMMING,Programmer:,Programmeur:
 STR_MUSIC_AND_SFX,Music and Special Effects:,Musique et effets spéciaux
 STR_IMAGES,Images,Images
 STR_YOU_WON,You Won!,Vous avez gagné !
-STR_WON_DETAILS,Congratulations! You managed to be there for Jesus's birth! (The wise men didn't show up for two years!),Félicitations ! Vous avez réussi à être là pour la naissance de Jésus ! (Les rois mages ne sont arrivés que deux ans plus tard !)
+STR_WON_DETAILS,Congratulations! You managed to be there for Jesus's birth with all the gifts! (The wise men didn't show up until two years after his birth!),Félicitations ! Vous avez réussi à être présent à la naissance de Jésus avec tous les cadeaux ! (Les rois mages ne sont arrivés que deux ans après sa naissance !)
 STR_YOU_LOST,Mission Failed.,Mission échouée.
-STR_LOST_DETAILS,"Don't feel bad. The wise men were not there when Jesus was born either.  In fact, they didn't show up until Jesus was 2 years old!","Ne t'en fais pas. Les rois mages n'étaient pas là non plus à la naissance de Jésus. En fait, ils ne sont arrivés que lorsque Jésus avait deux ans !"
+STR_LOST_DETAILS,Don't feel bad. The wise men were not there when Jesus was born either.,Ne vous en faites pas. Les rois mages n'étaient pas là non plus à la naissance de Jésus.
 STR_RESTART,Try Again,Réessayer
 STR_SCORE,Score:,Note:

@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://cndc4v6cqv7jj"]
+[gd_scene load_steps=15 format=3 uid="uid://cndc4v6cqv7jj"]
 
-[ext_resource type="Script" uid="uid://bi624ihywdcmo" path="res://scenes/12seconds/player/player.gd" id="1_u04jg"]
+[ext_resource type="Script" uid="uid://c4dgy17e5ji0q" path="res://scenes/12seconds/enemy1/enemy_1.gd" id="1_vmuag"]
 [ext_resource type="Texture2D" uid="uid://n6i4gxdg6giw" path="res://assets/craftpix-781196-free-desert-enemy-sprite-sheets-pixel-art/3 Scorpio/Scorpio_attack.png" id="2_t4grh"]
 [ext_resource type="Texture2D" uid="uid://cgw44i3j3o5x7" path="res://assets/craftpix-781196-free-desert-enemy-sprite-sheets-pixel-art/3 Scorpio/Scorpio_walk.png" id="2_tw1tm"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmuag"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4grh"]
-size = Vector2(35, 22)
+size = Vector2(36, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kesxs"]
 atlas = ExtResource("2_t4grh")
@@ -76,15 +78,28 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Enemy1" type="CharacterBody2D" groups=["player"]]
-script = ExtResource("1_u04jg")
+[node name="Enemy1" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_vmuag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vmuag")
+
+[node name="Enemy1Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy1Area2D"]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_t4grh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-7, -15)
+unique_name_in_owner = true
+position = Vector2(6, -15)
 sprite_frames = SubResource("SpriteFrames_hd0kr")
 animation = &"attack"
 frame_progress = 0.28270608
+flip_h = true
+
+[node name="DeathTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="Enemy1Area2D" to="." method="_on_enemy_1_area_2d_body_entered"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

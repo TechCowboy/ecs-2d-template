@@ -16,7 +16,7 @@ func _ready() -> void:
 	player_starting_x = player.position.x
 	
 func _process(delta: float) -> void:
-	north_star.position.x = star_starting_x + (player.position.x- player_starting_x) *0.75 
+	north_star.position.x = star_starting_x + (player.position.x- player_starting_x) * 0.3 
 	north_star.position.y = lerpf(north_star.position.y, height, delta)
 	
 	

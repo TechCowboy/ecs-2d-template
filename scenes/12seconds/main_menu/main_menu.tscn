@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c34ymwyxfdewd"]
+[gd_scene load_steps=6 format=3 uid="uid://c34ymwyxfdewd"]
 
 [ext_resource type="Script" uid="uid://daowulqv2xflt" path="res://scenes/12seconds/main_menu/main_menu.gd" id="1_v3e63"]
 [ext_resource type="Texture2D" uid="uid://b35s5njgdl6rw" path="res://assets/images/christmas-5751280_1920-pixabay.jpg" id="2_46t72"]
+[ext_resource type="Theme" uid="uid://cpdtyb2nb8rk6" path="res://themes/12seconds.tres" id="3_piw4j"]
 [ext_resource type="Texture2D" uid="uid://810gxoj4pih2" path="res://assets/images/ESRB_Everyone.svg" id="3_xnl1e"]
-[ext_resource type="Theme" path="res://themes/title.tres" id="3_ypud8"]
+[ext_resource type="Theme" uid="uid://3dixyvjhm3oi" path="res://themes/title.tres" id="3_ypud8"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_v3e63")
@@ -21,6 +22,7 @@ anchor_bottom = 1.0
 offset_top = -320.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("3_piw4j")
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10

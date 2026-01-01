@@ -26,24 +26,24 @@ func _ready() -> void:
 	language_options.selected = selected
 
 	TranslationServer.set_locale(languages[keys[selected]])
-	Globals.am.play_music.emit(Globals.music_main_menu)
+	Globals.am.play_music(Globals.music_main_menu)
 
 func _on_start_button_pressed() -> void:
-	Globals.sm.change_scene.emit(Globals.game_start_scene)
+	Globals.sm.change_scene(Globals.game_start_scene)
 
 func _on_language_item_selected(index: int) -> void:
 	var keys = languages.keys()
 	TranslationServer.set_locale(languages[keys[index]])
 
 func _on_settings_pressed() -> void:
-	Globals.sm.change_scene.emit(Globals.game_settings_scene)
+	Globals.sm.change_scene(Globals.game_settings_scene)
 
 func _on_help_button_pressed() -> void:
-	Globals.sm.change_scene.emit(Globals.game_help_scene)
+	Globals.sm.change_scene(Globals.game_help_scene)
 
 func _on_quit_pressed() -> void:
+	Globals.sm.change_scene(Globals.game_blank_scene)
 	get_tree().quit()
 
-
 func _on_credits_pressed() -> void:
-	Globals.sm.change_scene.emit(Globals.game_credit_scene)
+	Globals.sm.change_scene(Globals.game_credit_scene)

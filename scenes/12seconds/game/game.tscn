@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bw2n85403ll4k"]
+[gd_scene load_steps=12 format=3 uid="uid://bw2n85403ll4k"]
 
 [ext_resource type="Script" uid="uid://5ptivomvl2ld" path="res://scenes/12seconds/game/game.gd" id="1_kctxx"]
 [ext_resource type="PackedScene" uid="uid://b180gu44u7cs7" path="res://scenes/12seconds/north_star/north_star.tscn" id="3_pjh4x"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://rqaat4ruwhu3" path="res://scenes/12seconds/death/death.tscn" id="8_eyi0r"]
 [ext_resource type="PackedScene" uid="uid://dqgrubbi763op" path="res://scenes/12seconds/myrrh/myrrh.tscn" id="9_41pm4"]
 [ext_resource type="PackedScene" uid="uid://cytpx7h7lu3ku" path="res://scenes/12seconds/frankincense/frankincense.tscn" id="10_7c106"]
+[ext_resource type="PackedScene" uid="uid://cndc4v6cqv7jj" path="res://scenes/12seconds/enemy1/enemy_1.tscn" id="10_njbmp"]
+[ext_resource type="PackedScene" uid="uid://qvyas7j1rruv" path="res://scenes/12seconds/enemy2/enemy_2.tscn" id="11_jtxmv"]
 
 [node name="2Dmain" type="Node2D"]
 script = ExtResource("1_kctxx")
@@ -37,8 +39,8 @@ position = Vector2(-792, 225)
 position = Vector2(-389, 62)
 
 [node name="InstantDeath" parent="." instance=ExtResource("8_eyi0r")]
-position = Vector2(682, 1041)
-scale = Vector2(2, 2)
+position = Vector2(648, 376)
+scale = Vector2(4, 4)
 
 [node name="Myrrh" parent="." instance=ExtResource("9_41pm4")]
 position = Vector2(754, 46)
@@ -60,3 +62,51 @@ limit_right = 3200
 limit_bottom = 190
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="Enemy1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_njbmp")]
+position = Vector2(-38, 41)
+player = NodePath("../Player")
+
+[node name="Enemy2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_njbmp")]
+position = Vector2(-2528, 74)
+player = NodePath("../Player")
+
+[node name="Enemy3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_njbmp")]
+position = Vector2(-2465, 85)
+player = NodePath("../Player")
+
+[node name="Enemy4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_njbmp")]
+position = Vector2(-2405, 103)
+player = NodePath("../Player")
+
+[node name="Enemy5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_njbmp")]
+position = Vector2(-2309, 115)
+player = NodePath("../Player")
+
+[node name="Enemy6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_njbmp")]
+position = Vector2(-2237, 125)
+player = NodePath("../Player")
+
+[node name="Enemy7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_njbmp")]
+position = Vector2(-2173, 137)
+player = NodePath("../Player")
+
+[node name="Enemy8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_jtxmv")]
+position = Vector2(1834, 183)
+player = NodePath("../Player")
+
+[node name="Enemy9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_jtxmv")]
+position = Vector2(1889, 161)
+player = NodePath("../Player")
+
+[node name="Enemy10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_jtxmv")]
+position = Vector2(1970, 148)
+player = NodePath("../Player")
+
+[node name="Enemy11" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_jtxmv")]
+position = Vector2(2287, 79)
+player = NodePath("../Player")
+
+[node name="Enemy12" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_jtxmv")]
+position = Vector2(2514, 168)
+player = NodePath("../Player")

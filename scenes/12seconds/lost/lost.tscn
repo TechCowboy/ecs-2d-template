@@ -1,60 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://h6x55wwner7e"]
+[gd_scene load_steps=5 format=3 uid="uid://h6x55wwner7e"]
 
 [ext_resource type="Script" uid="uid://cc1gowhfmaqhf" path="res://scenes/12seconds/lost/lost.gd" id="1_ex7w0"]
 [ext_resource type="Texture2D" uid="uid://dx44w76m7333v" path="res://assets/images/manger-9223630_1920-pixabay.png" id="2_dueg2"]
-[ext_resource type="Theme" path="res://themes/title.tres" id="2_kwoac"]
+[ext_resource type="Theme" uid="uid://cpdtyb2nb8rk6" path="res://themes/12seconds.tres" id="2_f4gnh"]
+[ext_resource type="Theme" uid="uid://3dixyvjhm3oi" path="res://themes/title.tres" id="3_f4gnh"]
 
-[node name="GameOver" type="Node2D"]
+[node name="lost" type="Node2D"]
 script = ExtResource("1_ex7w0")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(573, 331)
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+offset_left = 460.0
+offset_top = 51.0
+offset_right = 460.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme = ExtResource("2_f4gnh")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="Container"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 531.0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-offset_right = 1152.0
-offset_bottom = 69.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/PanelContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2"]
-clip_contents = false
+[node name="Title" type="RichTextLabel" parent="Container/PanelContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 6
-theme = ExtResource("2_kwoac")
-theme_override_font_sizes/normal_font_size = 50
+theme = ExtResource("3_f4gnh")
+bbcode_enabled = true
 text = "STR_YOU_LOST"
 fit_content = true
-scroll_active = false
-autowrap_trim_flags = 0
 horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
+[node name="Details" type="RichTextLabel" parent="Container/PanelContainer/VBoxContainer"]
 layout_mode = 2
-alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2/VBoxContainer"]
-clip_contents = false
-layout_mode = 2
-size_flags_vertical = 6
-theme = ExtResource("2_kwoac")
+bbcode_enabled = true
 text = "STR_LOST_DETAILS"
 fit_content = true
-scroll_active = false
-autowrap_trim_flags = 0
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer2/VBoxContainer"]
-custom_minimum_size = Vector2(0, 300)
+[node name="Manger" type="TextureRect" parent="Container/PanelContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 texture = ExtResource("2_dueg2")
-expand_mode = 2
+expand_mode = 4
 stretch_mode = 4
 
-[node name="RestartButton" type="Button" parent="VBoxContainer2/VBoxContainer"]
+[node name="RestartButton" type="Button" parent="Container/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "STR_RESTART"
 
-[connection signal="pressed" from="VBoxContainer2/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Container/PanelContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
